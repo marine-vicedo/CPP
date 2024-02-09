@@ -1,0 +1,19 @@
+Les conteneurs
+Les conteneurs sont des objets qui stockent d'autres objets (ou elements)
+
+
+ex02 : les conteneurs adaptateurs (stack, queue et priority_queue)
+
+std::stack est un conteneur adaptateur, ce qui signifie qu'il fournit une interface spécifique pour manipuler des éléments, mais il ne définit pas en soi le stockage de ces éléments. Il s'appuie sur un conteneur sous-jacent pour effectuer les opérations de base comme l'ajout, la suppression et l'accès aux éléments.
+
+std::stack fournit une interface de pile (LIFO - Last-In, First-Out), offrant des opérations telles que push, pop, et top. Cependant, il délègue le stockage effectif des éléments à un conteneur sous-jacent comme std::deque, std::vector, ou std::list
+
+les 3 conteneurs adaptateurs sont 
+- std::stack : fournit une interface LIFO (Last In First Out) - schema de la pile d'assiette : dernier arrive, premier sorti. Ses operations principales sont push(ajout), pop(retire), top(accede).
+
+- std::queue : fournit une interface de file d'attente FIFO (First In First Out) - schema de la file d'attente a la caisse du supermarche. Ses principales operations sont push, pop et front(accede au 1er).
+
+- std::priority_queue : Implémente une file de priorité, où les éléments sont ordonnés en fonction d'un critère de comparaison spécifié. Elle utilise également un conteneur sous-jacent, mais les opérations principales incluent push, pop et top
+
+Les conteneurs adaptateurs ne fournissent pas d'interface d'iterations en raison de leur conception.
+Cependant, vous pouvez toujours accéder aux éléments de la pile en utilisant des méthodes telles que top, pop, et empty. Pour itérer sur les éléments d'un std::stack, vous devez accéder au conteneur sous-jacent (par exemple, std::deque par défaut) et utiliser les itérateurs de ce conteneur pour parcourir les éléments de la pile
